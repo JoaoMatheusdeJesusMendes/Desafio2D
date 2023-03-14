@@ -40,5 +40,6 @@ public class EnemyHit : MonoBehaviour
         animator.SetTrigger("Death");
         //desativa colisão
         GetComponent<Collider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().isKinematic = true;
     }
 }

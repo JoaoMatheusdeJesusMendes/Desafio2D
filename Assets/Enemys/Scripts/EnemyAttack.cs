@@ -25,7 +25,7 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private LayerMask layerPlayer;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         //pega o animator e coloca na variavel
         animator = GetComponent<Animator>();
@@ -38,39 +38,35 @@ public class EnemyAttack : MonoBehaviour
     void Update()
     {
         //condição para inimigo atacar
-        if(isAttack == true)
+        if(isAttack)
             AttackEnemy();
     }
 
     //função de ataque
-    public void AttackEnemy()
+    private void AttackEnemy()
     {
-        Collider2D Attack = Physics2D.OverlapCircle(transform.position, distanceAttack, layerPlayer);
         animator.SetTrigger("Attack");
         sword.Play();
-        if(Attack)
-        {
-            if( Attack.GetComponent<Lives>().livesPlayer > 0)
-            {
-                //se estiver no range de ataque e na visão do inimigo tira 1 de vida do player
-                Attack.GetComponent<Lives>().livesPlayer -= 1;
-            }
-
-            else
-            {
-                GetComponent<EnemyAttack>().enabled = false;
-            }
-        }
-        isAttack = false;
         //delay de ataque
-        Wait(3000);
+        StartCoroutine(Wait(3));
+    }
+
+    public void CheckAttack()
+    {
+        Collider2D Attack = Physics2D.OverlapCircle(transform.position, distanceAttack, layerPlayer);
+        if(Attack.TryGetComponent(out Lives liv))
+        {
+            Debug.Log("OI");
+            liv.TakeDamage(1);
+        }
     }
 
     //delay de ataque
-    private async void Wait(float duration)
+    private IEnumerator Wait(float duration)
     {
+        WaitForSeconds sec = new WaitForSeconds(duration);
         canAttack = false;
-        await Task.Delay((int)(duration));
+        yield return sec;
         canAttack = true;
     }
 }

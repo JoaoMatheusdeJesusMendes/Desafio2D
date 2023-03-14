@@ -33,7 +33,6 @@ public class Attack : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             AnimationAttack(Random.Range(1,4));
-            AttackRange();
         }
     }
     //função de ataque

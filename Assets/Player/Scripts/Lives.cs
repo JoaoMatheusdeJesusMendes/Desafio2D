@@ -26,9 +26,9 @@ public class Lives : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(int amount)
     {
+        livesPlayer -= amount;
         Debug.Log(livesPlayer);
         if(livesPlayer == 0)
         {

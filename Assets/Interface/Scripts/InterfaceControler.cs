@@ -69,6 +69,6 @@ public class InterfaceControler : MonoBehaviour
     //função que escreve as moedas coletadas na interface
     void ScoreUI()
     {
-        pont.text = "Moedas coletadas: " + coin.finds.ToString();
+        pont.text = coin.finds.ToString();
     }
 }
