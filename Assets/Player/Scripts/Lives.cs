@@ -36,7 +36,7 @@ public class Lives : MonoBehaviour
         }
     }
     // função de morte do player
-    void PlayerDeath()
+    private void PlayerDeath()
     {
         //ativa o som de morte
         deathSong.Play();
@@ -48,5 +48,14 @@ public class Lives : MonoBehaviour
         GetComponent<Movement>().enabled = false;
         GetComponent<Attack>().enabled = false;
     }
+
+    //função de morte por queda
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "FallDeath")
+        {
+            this.livesPlayer = 0;
+        }
+    }
+
     
 }
