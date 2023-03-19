@@ -61,7 +61,7 @@ public class InterfaceControler : MonoBehaviour
     }
 
     //Função de perder vida
-    void LosesLive(int i)
+    public void LosesLive(int i)
     {
         hearts[i].SetActive(false);
     }

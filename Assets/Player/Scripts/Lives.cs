@@ -16,6 +16,8 @@ public class Lives : MonoBehaviour
     //variavel que guarda o som de morte
     public AudioSource deathSong;
 
+    [SerializeField] private GameObject inter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +55,15 @@ public class Lives : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "FallDeath")
         {
+            int i;
+            //tira os corações do player
+            for(i = livesPlayer - 1; i >= 0; i--)
+            {
+                inter.GetComponent<InterfaceControler>().LosesLive(i);
+            }
             this.livesPlayer = 0;
+            //animação de morte
+            animator.SetBool("isDeath", true);
         }
     }
 
