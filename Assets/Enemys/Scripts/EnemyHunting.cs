@@ -34,6 +34,7 @@ public class EnemyHunting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //chama a função de persegução do inimigo
         HuntingEnemy();
     }
 
@@ -43,15 +44,14 @@ public class EnemyHunting : MonoBehaviour
         if(!startHunting)
         return;
         
-
         //determina a translação do inimigo
         transform.Translate(Vector2.right * speed * Time.deltaTime);
         //gira o inimigo caso ele não esteja olhando para o player
-        if(player.position.x < rb.position.x && enemyfollow.forRight == true)
+        if(player.position.x < rb.position.x && enemyfollow.forRight)
         {
             enemyfollow.Inverts();
         }
-        else if(player.position.x > rb.position.x && enemyfollow.forRight != true)
+        else if(player.position.x > rb.position.x && !enemyfollow.forRight)
         {
             enemyfollow.Inverts();
         }

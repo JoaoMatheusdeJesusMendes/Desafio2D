@@ -42,4 +42,16 @@ public class EnemyHit : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Rigidbody2D>().isKinematic = true;
     }
+
+    //função da queda do inimigo nos espinhos
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "FallDeath")
+        {
+            //animação de morte
+            animator.SetBool("Death", true);
+            //desativa funções do inimigo
+            GetComponent<Collider2D>().enabled = false;
+            GetComponent<Rigidbody2D>().isKinematic = true; 
+        }
+    }
 }
