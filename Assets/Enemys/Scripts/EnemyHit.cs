@@ -8,7 +8,7 @@ public class EnemyHit : MonoBehaviour
     public Animator animator;
 
     //pega corpo do inimigo
-    Rigidbody2D rd;
+    Rigidbody2D rb;
 
     //booleana de morte do inimigo
     public bool enemyDeath = false;
@@ -19,7 +19,7 @@ public class EnemyHit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rd = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -38,9 +38,14 @@ public class EnemyHit : MonoBehaviour
         deathSong.Play();
         //animção de morte
         animator.SetTrigger("Death");
+        //zera velocidade do inimigo (evita que ele ao morrer ande infinitamente)
+        rb.velocity = new Vector2(0, rb.velocity.y);
         //desativa colisão
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Rigidbody2D>().isKinematic = true;
+        GetComponent<Enemyfollow>().enabled = false;
+        GetComponent<EnemyAttack>().enabled = false;
+        GetComponent<EnemyHunting>().enabled = false;
     }
 
     //função da queda do inimigo nos espinhos
@@ -49,9 +54,14 @@ public class EnemyHit : MonoBehaviour
         {
             //animação de morte
             animator.SetBool("Death", true);
+            //zera velocidade do inimigo (evita que ele ao morrer ande infinitamente)
+            rb.velocity = new Vector2(0, rb.velocity.y);
             //desativa funções do inimigo
             GetComponent<Collider2D>().enabled = false;
-            GetComponent<Rigidbody2D>().isKinematic = true; 
+            GetComponent<Rigidbody2D>().isKinematic = true;
+            GetComponent<Enemyfollow>().enabled = false;
+            GetComponent<EnemyAttack>().enabled = false;
+            GetComponent<EnemyHunting>().enabled = false;
         }
     }
 }

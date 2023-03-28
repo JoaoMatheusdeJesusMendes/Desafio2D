@@ -56,7 +56,6 @@ public class EnemyAttack : MonoBehaviour
         Collider2D Attack = Physics2D.OverlapCircle(transform.position, distanceAttack, layerPlayer);
         if(Attack.TryGetComponent(out Lives liv))
         {
-            Debug.Log("OI");
             liv.TakeDamage(1);
         }
     }

@@ -8,7 +8,7 @@ public class EnemyHunting : MonoBehaviour
     public float speed;
 
     //pega posição do player
-    Transform player;
+    [SerializeField] private  GameObject player;
 
     //pega corpo do inimigo
     Rigidbody2D rb;
@@ -21,9 +21,6 @@ public class EnemyHunting : MonoBehaviour
 
     void Start()
     {
-        //pega posição do player
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
         //pega corpo rigido do inimigo
         rb = GetComponent<Rigidbody2D>();
 
@@ -63,11 +60,11 @@ public class EnemyHunting : MonoBehaviour
     //função para ver se o player está a direita ou a esquerda do player
     private int GetAxis()
     {
-        if(player.transform.position.x < transform.position.x)
+        if(player.transform.position.x < transform.localPosition.x)
             return -1;
             
 
-        if(player.transform.position.x > transform.position.x)
+        if(player.transform.position.x > transform.localPosition.x)
             return 1;
         
         return 0;
@@ -78,13 +75,11 @@ public class EnemyHunting : MonoBehaviour
     {
         if(horizontal > 0 && !enemyfollow.forRight)
         {
-            Debug.Log("AQUI");
             transform.rotation = Quaternion.Euler(0, 0, 0);
             enemyfollow.forRight = !enemyfollow.forRight;
         }
         if(horizontal < 0 && enemyfollow.forRight)
-        {   
-            Debug.Log("OOOOOOOOOOOOOO");
+        {
             transform.rotation = Quaternion.Euler(0, 180, 0);
             enemyfollow.forRight = !enemyfollow.forRight;
         }
