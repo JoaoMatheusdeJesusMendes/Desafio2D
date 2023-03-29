@@ -9,6 +9,7 @@ TagManager:
   - EndLevel
   - Sound
   - FallDeath
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
