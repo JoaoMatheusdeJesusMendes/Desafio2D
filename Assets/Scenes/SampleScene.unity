@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  attackRange: 1.2
+  attackRange: 1.5
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -382,6 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74dd0368f51fd3648864b3b605422e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  haveCheckpoint: 0
 --- !u!1 &52111376
 GameObject:
   m_ObjectHideFlags: 0
@@ -5539,6 +5540,9 @@ MonoBehaviour:
   nameGame: SampleScene
   nameMenu: Menus
   soundTrack: {fileID: 486396842}
+  player: {fileID: 47146672}
+  menuGameOverMorte: {fileID: 2133892261}
+  interfacePainel: {fileID: 1307907509}
 --- !u!114 &1004590910
 MonoBehaviour:
   m_ObjectHideFlags: 0

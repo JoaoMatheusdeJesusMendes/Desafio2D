@@ -8,7 +8,7 @@ public class Attack : MonoBehaviour
     public Animator animator;
 
     //variavel do range de ataque
-    public float attackRange = 0.2f;
+    public float attackRange;
 
     //variavel do layer do inimigo
     [SerializeField] private LayerMask enemyLayer;

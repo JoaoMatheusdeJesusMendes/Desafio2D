@@ -51,6 +51,13 @@ public class InterfaceControler : MonoBehaviour
             LosesLive(aux);
             aux = live.livesPlayer - 1;
         }
+        //verificação se o player recuperou vida
+        if((aux+1) < live.livesPlayer)
+        {
+            Debug.Log("OIIIIIIII");
+            winLive(aux-1);
+            aux = live.livesPlayer + 1;
+        }
 
         //verificação se o player pegou uma moeda
         if(countCoins < coin.finds)
@@ -64,6 +71,12 @@ public class InterfaceControler : MonoBehaviour
     public void LosesLive(int i)
     {
         hearts[i].SetActive(false);
+    }
+
+    //função de recuperar vida
+    public void winLive(int i)
+    {
+        hearts[i].SetActive(true);
     }
 
     //função que escreve as moedas coletadas na interface
