@@ -13,6 +13,9 @@ public class Attack : MonoBehaviour
     //variavel do layer do inimigo
     [SerializeField] private LayerMask enemyLayer;
 
+    //variavel que pega o centro do range de ataque
+    [SerializeField] private Transform centerAttack;
+
     //inimigos derrotados
     public int defeated = 0;
 
@@ -56,7 +59,7 @@ public class Attack : MonoBehaviour
     //Ataque player
     private void AttackRange()
     {
-        Collider2D hitEnemies = Physics2D.OverlapCircle(transform.position, attackRange, enemyLayer);
+        Collider2D hitEnemies = Physics2D.OverlapCircle(centerAttack.position, attackRange, enemyLayer);
             //caso inimigo tome dano vai para a tela função de morte
         if(hitEnemies)
         {
@@ -70,7 +73,7 @@ public class Attack : MonoBehaviour
     {
         //circulo de perceguição
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.DrawWireSphere(centerAttack.position, attackRange);
     }
 
     
