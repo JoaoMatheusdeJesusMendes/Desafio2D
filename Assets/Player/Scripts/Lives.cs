@@ -65,7 +65,7 @@ public class Lives : MonoBehaviour
             {
                 inter.GetComponent<InterfaceControler>().LosesLive(i);
             }
-            this.TakeDamage(3);
+            this.TakeDamage(livesPlayer);
             //animação de morte
             animator.SetBool("isDeath", true);
         }

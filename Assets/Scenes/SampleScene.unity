@@ -358,7 +358,7 @@ MonoBehaviour:
   livesPlayer: 3
   animator: {fileID: 0}
   deathSong: {fileID: 1983529579}
-  gameOverScreen: {fileID: 2133892261}
+  gameOverScreen: {fileID: 1004590910}
   inter: {fileID: 1004590904}
 --- !u!114 &47146683
 MonoBehaviour:
