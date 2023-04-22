@@ -32,6 +32,8 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Lives.isDeath)
+            return;
         //se precionar espaço o player ataca
         if(Input.GetKeyDown(KeyCode.Space))
         {
@@ -59,12 +61,15 @@ public class Attack : MonoBehaviour
     //Ataque player
     private void AttackRange()
     {
-        Collider2D hitEnemies = Physics2D.OverlapCircle(centerAttack.position, attackRange, enemyLayer);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(centerAttack.position, attackRange, enemyLayer);
             //caso inimigo tome dano vai para a tela função de morte
-        if(hitEnemies)
+        for(int i=0; i<hitEnemies.Length; i++)
         {
-            hitEnemies.GetComponent<EnemyHit>().enemyDeath = true;
-            defeated++;
+            if(hitEnemies[i])
+            {
+                hitEnemies[i].GetComponent<EnemyHit>().enemyDeath = true;
+                defeated++;
+            }
         }
     }
 

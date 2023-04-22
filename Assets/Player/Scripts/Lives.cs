@@ -7,6 +7,8 @@ public class Lives : MonoBehaviour
     //variavel do rigidybody
     private Rigidbody2D rd;
 
+    public static bool isDeath = false;
+
     //vidas do player
     public int livesPlayer = 3;
 
@@ -15,6 +17,8 @@ public class Lives : MonoBehaviour
 
     //variavel que guarda o som de morte
     public AudioSource deathSong;
+
+    [SerializeField] private ActiveMenuGameOver gameOverScreen;
 
     [SerializeField] private GameObject inter;
 
@@ -46,9 +50,9 @@ public class Lives : MonoBehaviour
         //animação de morte
         animator.SetBool("isDeath", true);
 
-        //Desabilita scripts
-        GetComponent<Movement>().enabled = false;
-        GetComponent<Attack>().enabled = false;
+        gameOverScreen.MenuRestartActive();
+
+        isDeath = true;
     }
 
     //função de morte por queda
@@ -61,7 +65,7 @@ public class Lives : MonoBehaviour
             {
                 inter.GetComponent<InterfaceControler>().LosesLive(i);
             }
-            this.livesPlayer = 0;
+            this.TakeDamage(3);
             //animação de morte
             animator.SetBool("isDeath", true);
         }

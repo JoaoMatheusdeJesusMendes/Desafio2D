@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     public float mass = 3.0f;
 
     //variavel para pegar o rigidybody do player
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rb;
 
     //pega a camera do player
     public GameObject camera;
@@ -39,10 +39,10 @@ public class Movement : MonoBehaviour
     void Start()
     {
         //pega o rigidybody do player
-        rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 
         //coloca a massa do codigo no rigidybody do player
-        rigidbody.mass = mass;    
+        rb.mass = mass;    
 
         //pega o animator e coloca na variavel
         animator = GetComponent<Animator>();
@@ -51,9 +51,19 @@ public class Movement : MonoBehaviour
         right = true;
     }
 
+    private void FixedUpdate() {
+        if(Lives.isDeath)
+            return;
+        //determina a translação do player
+        float translate = (Input.GetAxis("Horizontal") * speed);
+        rb.velocity = new Vector2(translate, rb.velocity.y);
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if(Lives.isDeath)
+            return;
         isGround = Physics2D.OverlapCircle(feetPosition.position, 0.1f, groundLayer);
         Move();
         if(Input.GetKeyDown(KeyCode.W))
@@ -83,17 +93,9 @@ public class Movement : MonoBehaviour
         //muda a booleana de corrida para true
         animator.SetBool("isRunning", true);
 
-        //determina a translação do player
-        float translate = (Input.GetAxis("Horizontal") * speed) * Time.deltaTime;
-
-        //para o personagem só ir para frente
-        if(translate<0)
-        {
-            translate = translate * (-1);
-        } 
-
+        //trocar transform para arrumar colizão.....
         //efetua a translação a depender de que lado o personagem está indo
-        transform.Translate(translate, 0, 0);
+        
         if(Input.GetKeyDown(KeyCode.A) && right == true)
         {
             transform.Rotate(0, -180, 0);
@@ -124,7 +126,7 @@ public class Movement : MonoBehaviour
     private void Jump()
     {
         //logica de pulo
-        rigidbody.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
+        rb.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
     }
 
     //função que verifica se o personagem está no chão

@@ -44,7 +44,11 @@ public class BottonGameOver : MonoBehaviour
 
     //função de restart
     public void Restart()
-    {
+    {       
+        //desativa menu de game over
+        menuGameOverMorte.SetActive(false);
+        //ativa interface
+        interfacePainel.SetActive(true);
         if(player.GetComponent<CheckpointsPlayer>().haveCheckpoint == false)
         {
             SceneManager.LoadScene(nameGame);
@@ -52,15 +56,7 @@ public class BottonGameOver : MonoBehaviour
         else
         {
             //recupera todas as vidas do player
-            player.GetComponent<Lives>().livesPlayer = 3;
-            
-            //desativa menu de game over
-            menuGameOverMorte.SetActive(false);
-
-            //ativa interface
-            interfacePainel.SetActive(true);
-
-            
+            player.GetComponent<Lives>().livesPlayer = 3;            
             
             //inicia a função de spawnar no checkpoint
             player.GetComponent<CheckpointsPlayer>().initCheckpoint();
@@ -68,9 +64,7 @@ public class BottonGameOver : MonoBehaviour
             //para animação de morte
             player.GetComponent<Lives>().animator.SetBool("isDeath", false);
 
-            //habilita scripts scripts
-            GetComponent<Movement>().enabled = true;
-            GetComponent<Attack>().enabled = true;
+            Lives.isDeath = false;
         }
     }
 

@@ -41,8 +41,7 @@ public class CoinSpawn : MonoBehaviour
     void SpawnCoin()
     {
         //pega posição final do inimigo
-        Vector2 spawnPosition = enemy.transform.position;
-        
+        Vector2 spawnPosition = new Vector2 (enemy.transform.position.x, enemy.transform.position.y + (float)0.75);
         //instancia o objeto
         Instantiate(coin, spawnPosition, Quaternion.identity);
     }

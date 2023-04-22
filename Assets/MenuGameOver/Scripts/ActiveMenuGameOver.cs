@@ -19,18 +19,8 @@ public class ActiveMenuGameOver : MonoBehaviour
     {
         rpt = GetComponent<Report>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(player.GetComponent<Lives>().livesPlayer == 0)
-        {
-            Wait(2000);
-        }
-    }
-
     //ativa o menu de restart
-    private void MenuRestartActive()
+    public void MenuRestartActive()
     {
         menuGameOverMorte.SetActive(true);
         interfacePainel.SetActive(false);
@@ -42,12 +32,5 @@ public class ActiveMenuGameOver : MonoBehaviour
         menuGameOverEndLevel.SetActive(true);
         interfacePainel.SetActive(false);
         rpt.WriteReportEndLevel(); 
-    }
-
-    //delay de ataque
-    private async void Wait(float duration)
-    {
-        await Task.Delay((int)(duration));
-        MenuRestartActive();
     }
 }
