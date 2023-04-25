@@ -51,6 +51,7 @@ public class BottonGameOver : MonoBehaviour
         interfacePainel.SetActive(true);
         if(player.GetComponent<CheckpointsPlayer>().haveCheckpoint == false)
         {
+            Lives.isDeath = false;
             SceneManager.LoadScene(nameGame);
         }
         else
