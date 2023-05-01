@@ -42,6 +42,13 @@ public class BottonGameOver : MonoBehaviour
         }
     }
 
+    //função de recomeçar do fim do jogo
+    public void RestartEndGame()
+    {
+        //recomeça a cena
+        SceneManager.LoadScene(nameGame);
+    }
+
     //função de restart
     public void Restart()
     {       

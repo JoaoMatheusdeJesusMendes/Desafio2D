@@ -4624,7 +4624,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1424491269}
         m_TargetAssemblyTypeName: BottonGameOver, Assembly-CSharp
         m_MethodName: ReturnMainMenu
         m_Mode: 1
@@ -8915,9 +8915,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1424491269}
         m_TargetAssemblyTypeName: BottonGameOver, Assembly-CSharp
-        m_MethodName: Restart
+        m_MethodName: RestartEndGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

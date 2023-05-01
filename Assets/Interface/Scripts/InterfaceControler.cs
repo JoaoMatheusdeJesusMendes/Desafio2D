@@ -45,7 +45,6 @@ public class InterfaceControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(aux);
         //verificação se o player perdeu vida
         if((aux+1) > live.livesPlayer)
         {
@@ -56,7 +55,6 @@ public class InterfaceControler : MonoBehaviour
         if((aux+1) < live.livesPlayer)
         {
             aux += 1;
-            Debug.Log("OIIIIIIII");
             winLive(aux);   
         }
 

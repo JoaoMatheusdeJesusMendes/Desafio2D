@@ -27,7 +27,6 @@ public class CheckpointsPlayer : MonoBehaviour
         {
             checkpointPos = other.gameObject.transform.position;
             haveCheckpoint = true;
-            Debug.Log("ae");
         }
     }
 

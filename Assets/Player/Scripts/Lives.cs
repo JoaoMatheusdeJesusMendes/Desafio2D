@@ -35,7 +35,6 @@ public class Lives : MonoBehaviour
     public void TakeDamage(int amount)
     {
         livesPlayer -= amount;
-        Debug.Log(livesPlayer);
         if(livesPlayer == 0)
         {
             PlayerDeath();
