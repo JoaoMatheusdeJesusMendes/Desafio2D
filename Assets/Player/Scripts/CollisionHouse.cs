@@ -17,12 +17,8 @@ public class CollisionHouse : MonoBehaviour
     }
     
     //função se o player colidir com a casa
-    private void OnTriggerEnter2D(Collider2D other) 
+    public void ActiveMenuEndGame() 
     {
-        //verifica se é com o chão que o player esta colidindo
-        if(other.gameObject.layer == 11)
-        {
-            events.GetComponent<ActiveMenuGameOver>().MenuEndGameActive();
-        }
+        events.GetComponent<ActiveMenuGameOver>().MenuEndGameActive();
     }
 }
