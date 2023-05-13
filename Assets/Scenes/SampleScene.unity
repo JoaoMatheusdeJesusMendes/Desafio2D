@@ -142,6 +142,8 @@ GameObject:
   - component: {fileID: 47146682}
   - component: {fileID: 47146683}
   - component: {fileID: 47146684}
+  - component: {fileID: 47146685}
+  - component: {fileID: 47146686}
   m_Layer: 3
   m_Name: Knight
   m_TagString: Player
@@ -386,6 +388,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   haveCheckpoint: 0
+--- !u!114 &47146685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47146672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7015c578fb1002b4bbebf9539a9d29a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredTheCollider:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 47146683}
+        m_TargetAssemblyTypeName: CollisionHouse, Assembly-CSharp
+        m_MethodName: ActiveMenuEndGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &47146686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47146672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc80662514c854a43960a9c6243dea7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredTheCollider:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 47146682}
+        m_TargetAssemblyTypeName: Lives, Assembly-CSharp
+        m_MethodName: DeathFall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &52111376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,6 +1374,7 @@ GameObject:
   - component: {fileID: 317782332}
   - component: {fileID: 317782331}
   - component: {fileID: 317782330}
+  - component: {fileID: 317782340}
   m_Layer: 8
   m_Name: HeavyBandit (2)
   m_TagString: Enemy
@@ -1561,6 +1618,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &317782340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317782328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b400c3616a4500846b54464653147ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredTheCollider:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 317782332}
+        m_TargetAssemblyTypeName: EnemyHit, Assembly-CSharp
+        m_MethodName: DeathFallEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &335880485
 GameObject:
   m_ObjectHideFlags: 0
@@ -2565,6 +2649,7 @@ GameObject:
   - component: {fileID: 509411956}
   - component: {fileID: 509411955}
   - component: {fileID: 509411954}
+  - component: {fileID: 509411964}
   m_Layer: 8
   m_Name: LightBandit (8)
   m_TagString: Enemy
@@ -2808,6 +2893,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &509411964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509411952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b400c3616a4500846b54464653147ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredTheCollider:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 509411956}
+        m_TargetAssemblyTypeName: EnemyHit, Assembly-CSharp
+        m_MethodName: DeathFallEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2946,6 +3058,7 @@ GameObject:
   - component: {fileID: 522637529}
   - component: {fileID: 522637528}
   - component: {fileID: 522637527}
+  - component: {fileID: 522637537}
   m_Layer: 8
   m_Name: LightBandit (7)
   m_TagString: Enemy
@@ -3189,6 +3302,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &522637537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522637525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b400c3616a4500846b54464653147ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredTheCollider:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 522637529}
+        m_TargetAssemblyTypeName: EnemyHit, Assembly-CSharp
+        m_MethodName: DeathFallEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &539602734
 GameObject:
   m_ObjectHideFlags: 0
@@ -3667,6 +3807,7 @@ GameObject:
   - component: {fileID: 614297290}
   - component: {fileID: 614297289}
   - component: {fileID: 614297288}
+  - component: {fileID: 614297298}
   m_Layer: 8
   m_Name: HeavyBandit (4)
   m_TagString: Enemy
@@ -3910,6 +4051,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &614297298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614297286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b400c3616a4500846b54464653147ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredTheCollider:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 614297290}
+        m_TargetAssemblyTypeName: EnemyHit, Assembly-CSharp
+        m_MethodName: DeathFallEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &695944692
 GameObject:
   m_ObjectHideFlags: 0
@@ -4213,6 +4381,7 @@ GameObject:
   - component: {fileID: 799424944}
   - component: {fileID: 799424943}
   - component: {fileID: 799424942}
+  - component: {fileID: 799424952}
   m_Layer: 8
   m_Name: LightBandit (3)
   m_TagString: Enemy
@@ -4456,6 +4625,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &799424952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799424940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b400c3616a4500846b54464653147ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredTheCollider:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 799424944}
+        m_TargetAssemblyTypeName: EnemyHit, Assembly-CSharp
+        m_MethodName: DeathFallEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &846285276
 GameObject:
   m_ObjectHideFlags: 0
@@ -5017,6 +5213,7 @@ GameObject:
   - component: {fileID: 967895073}
   - component: {fileID: 967895072}
   - component: {fileID: 967895071}
+  - component: {fileID: 967895081}
   m_Layer: 8
   m_Name: LightBandit (5)
   m_TagString: Enemy
@@ -5260,6 +5457,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &967895081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967895069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b400c3616a4500846b54464653147ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredTheCollider:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 967895073}
+        m_TargetAssemblyTypeName: EnemyHit, Assembly-CSharp
+        m_MethodName: DeathFallEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &991667337
 GameObject:
   m_ObjectHideFlags: 0
@@ -5910,6 +6134,7 @@ GameObject:
   - component: {fileID: 1162411633}
   - component: {fileID: 1162411632}
   - component: {fileID: 1162411631}
+  - component: {fileID: 1162411641}
   m_Layer: 8
   m_Name: LightBandit (1)
   m_TagString: Enemy
@@ -6153,6 +6378,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1162411641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162411629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b400c3616a4500846b54464653147ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredTheCollider:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1162411633}
+        m_TargetAssemblyTypeName: EnemyHit, Assembly-CSharp
+        m_MethodName: DeathFallEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1177064142
 GameObject:
   m_ObjectHideFlags: 0
@@ -7422,6 +7674,7 @@ GameObject:
   - component: {fileID: 1444817812}
   - component: {fileID: 1444817811}
   - component: {fileID: 1444817810}
+  - component: {fileID: 1444817820}
   m_Layer: 8
   m_Name: LightBandit (9)
   m_TagString: Enemy
@@ -7665,6 +7918,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1444817820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444817808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b400c3616a4500846b54464653147ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredTheCollider:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1444817812}
+        m_TargetAssemblyTypeName: EnemyHit, Assembly-CSharp
+        m_MethodName: DeathFallEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1445692526
 GameObject:
   m_ObjectHideFlags: 0
@@ -9228,6 +9508,7 @@ GameObject:
   - component: {fileID: 1749027347}
   - component: {fileID: 1749027346}
   - component: {fileID: 1749027345}
+  - component: {fileID: 1749027355}
   m_Layer: 8
   m_Name: LightBandit (4)
   m_TagString: Enemy
@@ -9471,6 +9752,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1749027355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749027343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b400c3616a4500846b54464653147ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredTheCollider:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1749027347}
+        m_TargetAssemblyTypeName: EnemyHit, Assembly-CSharp
+        m_MethodName: DeathFallEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1756952902
 GameObject:
   m_ObjectHideFlags: 0
@@ -16710,6 +17018,7 @@ GameObject:
   - component: {fileID: 1819691644}
   - component: {fileID: 1819691643}
   - component: {fileID: 1819691642}
+  - component: {fileID: 1819691652}
   m_Layer: 8
   m_Name: HeavyBandit (3)
   m_TagString: Enemy
@@ -16953,6 +17262,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1819691652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819691640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b400c3616a4500846b54464653147ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredTheCollider:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1819691644}
+        m_TargetAssemblyTypeName: EnemyHit, Assembly-CSharp
+        m_MethodName: DeathFallEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1890942491
 GameObject:
   m_ObjectHideFlags: 0
@@ -18069,6 +18405,7 @@ GameObject:
   - component: {fileID: 2124363210}
   - component: {fileID: 2124363209}
   - component: {fileID: 2124363208}
+  - component: {fileID: 2124363218}
   m_Layer: 8
   m_Name: LightBandit (6)
   m_TagString: Enemy
@@ -18312,6 +18649,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2124363218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124363206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b400c3616a4500846b54464653147ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredTheCollider:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2124363210}
+        m_TargetAssemblyTypeName: EnemyHit, Assembly-CSharp
+        m_MethodName: DeathFallEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2124908830
 GameObject:
   m_ObjectHideFlags: 0
@@ -18487,6 +18851,7 @@ GameObject:
   - component: {fileID: 212652213700182010}
   - component: {fileID: 212652213700182011}
   - component: {fileID: 212652213700182012}
+  - component: {fileID: 212652213700182013}
   m_Layer: 8
   m_Name: HeavyBandit (1)
   m_TagString: Enemy
@@ -18513,6 +18878,7 @@ GameObject:
   - component: {fileID: 212259379996972553}
   - component: {fileID: 212259379996972554}
   - component: {fileID: 212259379996972555}
+  - component: {fileID: 212259379996972556}
   m_Layer: 8
   m_Name: LightBandit (2)
   m_TagString: Enemy
@@ -18943,6 +19309,33 @@ MonoBehaviour:
   layerPlayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &212259379996972556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689866011960432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b400c3616a4500846b54464653147ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredTheCollider:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 212259379996972553}
+        m_TargetAssemblyTypeName: EnemyHit, Assembly-CSharp
+        m_MethodName: DeathFallEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!212 &212652213700182005
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19116,3 +19509,30 @@ MonoBehaviour:
   layerPlayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &212652213700182013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463393301219347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b400c3616a4500846b54464653147ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredTheCollider:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 212652213700182010}
+        m_TargetAssemblyTypeName: EnemyHit, Assembly-CSharp
+        m_MethodName: DeathFallEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -49,19 +49,16 @@ public class EnemyHit : MonoBehaviour
     }
 
     //função da queda do inimigo nos espinhos
-    private void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.tag == "FallDeath")
-        {
-            //animação de morte
-            animator.SetBool("Death", true);
-            //zera velocidade do inimigo (evita que ele ao morrer ande infinitamente)
-            rb.velocity = new Vector2(0, rb.velocity.y);
-            //desativa funções do inimigo
-            GetComponent<Collider2D>().enabled = false;
-            GetComponent<Rigidbody2D>().isKinematic = true;
-            GetComponent<Enemyfollow>().enabled = false;
-            GetComponent<EnemyAttack>().enabled = false;
-            GetComponent<EnemyHunting>().enabled = false;
-        }
+    public void DeathFallEnemy() {
+        //animação de morte
+        animator.SetBool("Death", true);
+        //zera velocidade do inimigo (evita que ele ao morrer ande infinitamente)
+        rb.velocity = new Vector2(0, rb.velocity.y);
+        //desativa funções do inimigo
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().isKinematic = true;
+        GetComponent<Enemyfollow>().enabled = false;
+        GetComponent<EnemyAttack>().enabled = false;
+        GetComponent<EnemyHunting>().enabled = false;
     }
 }
